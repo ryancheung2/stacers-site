@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stacers - 可持续橡皮擦</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FFF6EF;
+            color: #333;
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Georgia', serif;
+            color: #2c3e50;
+        }
+
+        p {
+            font-family: 'Georgia', serif; 
+        }
+
+
+        section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        /* Updated Intro Section */
+        .intro {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 90vh; 
+            background-color: #FFF6EF;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .intro-content {
+            max-width: 800px;
+            padding: 20px;
+            background: #eef9f4; /* Light green inside the box */
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .intro h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .intro p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            font-weight: 400;
+            color: #2c3e50;
+        }
+
+        .intro strong {
+            font-weight: 600;
+            color: #4CAF50; /* Highlighted numbers in green */
+        }
+
+        /* Features Section */
+        .content-section {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            margin: 20px auto;
+            padding: 60px 20px; 
+        }
+
+        .features-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .feature {
+            background: #eef9f4; 
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: left;
+            opacity: 0;
+            transform: translateX(0); 
+            transition: all 0.6s ease-out;
+        }
+
+        /* Animations */
+        .slide-in-left {
+            transform: translateX(-50px); 
+        }
+
+        .slide-in-right {
+            transform: translateX(50px); 
+        }
+
+        /* Reveal on Scroll */
+        .animate-on-scroll {
+            opacity: 0;
+        }
+
+        .animate-on-scroll.scrolled-in {
+            opacity: 1;
+            transform: translateX(0); 
+        }
+
+
+        #mission {
+            background: #eef9f4; 
+            padding: 60px 20px;
+            border-radius: 8px;
+            transition: all 0.6s ease-out;
+            border: 1px solid #ddd;
+        }
+
+        #mission p{
+            font-size: 1.2em;
+            margin-left: 50px;
+            margin-right: 50px;
+        }
+
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .stacers-intro {
+            text-align:center;
+            padding: 60px 20px;
+            border-radius: 8px;
+            background: #eef9f4; /* Light green inside the box */
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            transform: translateX(50px);
+            transition: all 0.6s ease-out;
+            opacity: 0;
+            font-size: 1.2em;
+
+        }
+
+        .stacers-intro.scrolled-in {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+    </style>
+</head>
+<body>
+    <section class="intro">
+        <div class="intro-content" id="intro-content">
+            <h1>你知道吗？</h1>
+            <p>
+                一个小型橡皮擦仅重<strong>10克</strong>，但在生产过程中会产生<strong>150克</strong>的二氧化碳。
+                <button id="autoScrollButton" style="position: fixed; top: 20px; right: 20px; z-index: 1000; padding: 10px 20px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer;">Start Auto Scroll</button>
+            </p>
+        </div>
+    </section>
+    <section class="stacers-intro">
+        <h1>介绍 Stacers</h1>
+        <p>100% 植物性橡皮擦，为更环保的未来。</p>
+    </section>
+    <section id="features" class="content-section">
+        <h2>特点</h2>
+        <div class="features-list">
+            <div class="feature animate-on-scroll slide-in-left">
+                <h3>环保</h3>
+                <p>采用100%植物性材料制成。我们利用果皮创造质感和香气。</p>
+            </div>
+            <div class="feature animate-on-scroll slide-in-right">
+                <h3>耐用</h3>
+                <p>设计用于长时间使用。</p>
+            </div>
+            <div class="feature animate-on-scroll slide-in-left">
+                <h3>适合学生</h3>
+                <p>专为学生和老师设计。</p>
+            </div>
+        </div>
+    </section>
+    <section id="mission" class="content-section animate-on-scroll slide-in-right">
+        <h2>我们的使命</h2>
+        <p>
+            我们公司致力于通过使用可持续橡皮擦创造更好的书写体验，同时减少碳排放和食物浪费。我们计划回收果皮并将其制成有效的橡皮擦。我们希望我们的一点改变可以激发世界的巨大变化。
+        </p>
+    </section>
+    <script>
+        function handleFeaturesAnimation() {
+            const features = document.querySelectorAll('#features .animate-on-scroll');
+            const triggerPoint = window.innerHeight * 0.85;
+
+            features.forEach((feature) => {
+                const elementTop = feature.getBoundingClientRect().top;
+
+                if (elementTop < triggerPoint) {
+                    feature.classList.add('scrolled-in');
+                } else {
+                    feature.classList.remove('scrolled-in');
+                }
+            });
+        }
+
+        function handleMissionAnimation() {
+            const mission = document.querySelector('#mission');
+            const triggerPoint = window.innerHeight * 0.75;
+
+            if (mission) {
+                const elementTop = mission.getBoundingClientRect().top;
+
+                if (elementTop < triggerPoint) {
+                    mission.classList.add('scrolled-in');
+                } else {
+                    mission.classList.remove('scrolled-in');
+                }
+            }
+        }
+
+        function handleStacersAnimation() {
+            const stacers = document.querySelector('.stacers-intro');
+            const triggerPoint = window.innerHeight * 0.75;
+
+            if (stacers) {
+                const elementTop = stacers.getBoundingClientRect().top;
+
+                if (elementTop < triggerPoint) {
+                    stacers.classList.add('scrolled-in');
+                } else {
+                    stacers.classList.remove('scrolled-in');
+                }
+            }
+        }
+
+        function handleScrollAnimations() {
+            handleFeaturesAnimation();
+            handleMissionAnimation();
+            handleStacersAnimation();
+        }
+
+        window.addEventListener('scroll', handleScrollAnimations);
+        document.addEventListener('DOMContentLoaded', handleScrollAnimations);
+
+        let autoScrollEnabled = false; 
+        let scrollSpeed = 2; 
+
+        function autoScroll() {
+            if (autoScrollEnabled) {
+                window.scrollBy(0, scrollSpeed); 
+                if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+                    autoScrollEnabled = false; 
+                    document.getElementById("autoScrollButton").innerText = "Start Auto Scroll";
+                }
+            }
+            requestAnimationFrame(autoScroll);
+        }
+
+        document.getElementById("autoScrollButton").addEventListener("click", () => {
+            autoScrollEnabled = !autoScrollEnabled; 
+            const button = document.getElementById("autoScrollButton");
+            if (autoScrollEnabled) {
+                button.innerText = "Stop Auto Scroll";
+            } else {
+                button.innerText = "Start Auto Scroll";
+            }
+        });
+
+        autoScroll();
+    </script>
+</body>
+</html>
