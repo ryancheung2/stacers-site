@@ -281,22 +281,6 @@
         });
 
         autoScroll();
-
-        let scrollingAllowed = false; // By default, scrolling is disabled
-        
-        function disableScrolling(event) {
-                if (!scrollingAllowed) {
-                    event.preventDefault();
-                }
-        }
-        
-        document.addEventListener("wheel", disableScrolling, { passive: false });
-        
-        window.addEventListener("message", (event) => {
-                if (event.data === "enable-scrolling") {
-                    scrollingAllowed = true;
-                }
-        });
     </script>
 </body>
 </html>
